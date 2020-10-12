@@ -26,11 +26,11 @@
                         <span></span>
                     </button>
                     <form class="form">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <h3 style="margin-top:0">Haultail® ready to Help!</h3>
-                                <h4>Ask us a question</h4>
-                                <br>
+                        <div class="row flex-column align-items-start align-items-md-end">
+                            <div class="col-sm-12 col-md-6">
+                                <h3 class="my-0 title">HAVE A QUESTION?<br>
+                                    eMAIL or CALL</h3>
+                                <h4 class="my-0 subtitle">for a RAPID RESPONSE</h4>
                             </div>
                         </div>
                         <div class="row">
@@ -70,44 +70,70 @@
     </section>
 
     <style>
+        @font-face {
+            font-family: 'Niveau Grotesk';
+            font-weight: 900;
+            font-style: normal;
+
+            src: url("../fonts/NiveauGroteskBlack.woff2") format("woff2"), url("../fonts/NiveauGroteskBlack.woff") format("woff");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Niveau Grotesk';
+            font-weight: 300;
+            font-style: normal;
+
+            src: url("../fonts/NiveauGroteskLight.woff2") format("woff2"), url("../fonts/NiveauGroteskLight.woff") format("woff");
+            font-display: swap;
+        }
+
         #help-block {
+            position: fixed;
+            z-index: 99999;
             top: 0;
             left: 0;
-            position: fixed;
-            height: 100%;
+
             width: 100%;
-            background-color: rgba(0, 0, 0, .7);
-            visibility: hidden;
-            opacity: 0;
+            height: 100%;
+            /* visibility: hidden;
+                                                    opacity: 0; */
+
             transition: .2s;
-            z-index: 99999;
+
+            background-color: rgba(0, 0, 0, .7);
         }
 
         #help-block .modal-dialog {
             position: absolute;
-            left: 50%;
             top: 50%;
-            transform: translate(-50%, -50%);
-            transition: .2s;
+            left: 50%;
+
+            width: 100%;
+            max-width: 790px;
             margin: 0;
-            width: 90%;
-            max-width: 600px;
+
+            transition: .2s;
+            transform: translate(-50%, -50%);
         }
 
         #help-block .close {
+            position: absolute;
             z-index: 1;
             top: -35px;
             right: 20px;
+
+            opacity: 1;
             color: #fff;
             outline: none;
-            position: absolute;
-            opacity: 1;
         }
 
         #help-block .close>span {
             display: block;
+
             width: 20px;
             height: 20px;
+
             background-image: url("./img/close.png");
             background-repeat: no-repeat;
             background-position: 0 0;
@@ -119,8 +145,14 @@
             z-index: 1;
             right: 0;
             bottom: 70px;
+
             width: 128px;
+            padding: 0 0 0 48px;
+
             cursor: pointer;
+            text-transform: uppercase;
+
+            color: #0080cd;
             border: none;
             border-top-left-radius: 30px;
             border-bottom-left-radius: 30px;
@@ -128,48 +160,55 @@
             background-color: #fff;
             -webkit-box-shadow: -3px 1px 10px 2px #ccc;
             box-shadow: -3px 1px 10px 2px #ccc;
-            line-height: 55px;
-            padding: 0 0 0 48px;
+
             font-family: NiveauGroteskBlack;
             font-size: 19px;
-            text-transform: uppercase;
-            color: #0080cd;
+            line-height: 55px;
         }
 
         .help-btn::before {
-            background-color: #0074cd;
             position: absolute;
-            border-radius: 100%;
             z-index: 2;
             top: 50%;
             left: 5px;
+
             display: block;
+
             width: 45px;
             height: 45px;
+
             content: '';
-            background-repeat: no-repeat;
-            background-size: cover;
             -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
-            background-position: 8px 50%;
+
+            border-radius: 100%;
+            background-color: #0074cd;
             background-image: url(/wp-content/themes/haultail/images/footer-logo-image.png);
+            background-repeat: no-repeat;
+            background-position: 8px 50%;
+            background-size: cover;
         }
 
         #help-block .btn-submit-wrapper {
             position: relative;
-            border-radius: 18px;
+
             text-align: right;
+
+            border-radius: 18px;
         }
 
         #help-block .btn-submit-wrapper::before {
-            width: 126px;
             position: absolute;
             z-index: 1;
             top: 0;
             right: 0;
             bottom: 0;
+
+            width: 126px;
             margin: -3px;
+
             content: '';
+
             border-radius: inherit;
             background: -webkit-gradient(linear, left top, left bottom, from(#fae50e), color-stop(#facf21), to(#f8bb2c));
             background: linear-gradient(to bottom, #fae50e, #facf21, #f8bb2c);
@@ -178,15 +217,19 @@
         #help-block .btn-submit {
             position: relative;
             z-index: 2;
+
             width: 120px;
+
             cursor: pointer;
             text-align: center;
             text-transform: uppercase;
+
             border: none;
             border-radius: 18px;
             outline: none;
             background: -webkit-gradient(linear, left bottom, left top, from(#fae50e), color-stop(#facf21), to(#f8bb2c));
             background: linear-gradient(to top, #fae50e, #facf21, #f8bb2c);
+
             font-size: 17px;
             font-weight: 700;
             line-height: 30px;
@@ -198,9 +241,23 @@
             box-shadow: inset 3px 3px 5px 0px rgba(184, 99, 0, 0.2), 3px 3px 3px rgba(4, 64, 101, 0.1);
         }
 
+        #help-block .modal-content::before {
+            position: absolute;
+            top: -40px;
+            left: 50px;
+
+            display: block;
+
+            width: 358px;
+            height: 296px;
+
+            content: '';
+
+            background: url('../img/img-1.png') no-repeat center center/contain;
+        }
+
         #help-block .modal-body {
-            padding-top: 25px;
-            padding-bottom: 25px;
+            padding: 40px 30px 35px 30px;
         }
 
         #help-block .form-group {
@@ -210,6 +267,7 @@
         #help-block .form-control {
             height: 40px;
             margin-bottom: 10px;
+
             border-color: #a9a9a9;
             border-top-color: #000;
             border-left-color: #000;
@@ -218,6 +276,7 @@
         #help-block .form-control-textarea {
             height: 90px;
             margin-bottom: 0;
+
             border: 1px solid #767676;
             border-radius: 0;
         }
@@ -228,12 +287,25 @@
         }
 
         #help-block .modal-header {
-            background: linear-gradient(to bottom, #fae50e, #facf21, #f8bb2c);
-            border-bottom: none;
-            padding: 0;
             height: 55px;
+            padding: 0;
+
+            border-bottom: none;
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
+            background: linear-gradient(to bottom, #fae50e, #facf21, #f8bb2c);
+        }
+
+        #help-block .title,
+        #help-block .subtitle {
+            font-family: 'Niveau Grotesk', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            line-height: 28px;
+        }
+
+        #help-block .form .row:first-child {
+            padding-bottom: 40px;
         }
 
         @-webkit-keyframes slide-bottom {
@@ -256,19 +328,41 @@
             }
         }
 
+        @media (max-width: 991.98px) {
+            #help-block .modal-dialog {
+                width: 90%;
+            }
+        }
+
         @media (max-width: 767.98px) {
+            #help-block .modal-content::before {
+                display: none;
+            }
+
             #help-block .form-control {
                 margin-bottom: 20px;
             }
 
             #help-block h3 {
-                font-size: 24px;
                 margin-bottom: 0;
+
+                font-size: 24px;
             }
 
             #help-block h4 {
-                font-size: 22px;
                 margin-top: 0;
+
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            #help-block .modal-body {
+                padding: 15px;
+            }
+
+            #help-block .form .row:first-child {
+                padding-bottom: 15px;
             }
         }
     </style>

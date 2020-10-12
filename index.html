@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Main style -->
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+<button type="button" class="help-btn">Help</button>
+<section id="help-block">
+    <div class="modal-dialog modal-md modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close position-absolute" aria-label="Close">
+                    <span></span>
+                </button>
+                <form class="form">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3 style="margin-top:0">Haultail® ready to Help!</h3>
+                            <h4>Ask us a question</h4>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control"
+                                       placeholder="Your name">
+                                <input type="text" class="form-control mb-0"
+                                       placeholder="Company (optional)">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="email" class="form-control"
+                                       placeholder="Your email">
+                                <input type="text" class="form-control mb-0"
+                                       placeholder="City, State">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                        <textarea class="form-control form-control-textarea"
+                                                  placeholder="Your question ..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col-sm-12">
+                            <div class="btn-submit-wrapper">
+                                <button type="submit" class="btn-submit">
+                                    Send
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    #help-block {
+        top: 0;
+        left: 0;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, .7);
+        visibility: hidden;
+        opacity: 0;
+        transition: .2s;
+        z-index: 99999;
+    }
+    #help-block .modal-dialog {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: .2s;
+        margin: 0;
+        width: 90%;
+        max-width: 600px;
+    }
+    #help-block .close {
+        z-index: 1;
+        top: -30px;
+        right: 0;
+        color: #fff;
+        outline: none;
+        position: absolute;
+        opacity: 1;
+    }
+
+    #help-block .close > span {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-image: url("/wp-content/themes/haultail/img/close-w.png");
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: cover;
+    }
+
+    .help-btn {
+        position: fixed;
+        z-index: 1;
+        right: 0;
+        bottom: 70px;
+        width: 128px;
+        cursor: pointer;
+        border: none;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        outline: none;
+        background-color: #fff;
+        -webkit-box-shadow: -3px 1px 10px 2px #ccc;
+        box-shadow: -3px 1px 10px 2px #ccc;
+        line-height: 55px;
+        padding: 0 0 0 48px;
+        font-family: NiveauGroteskBlack;
+        font-size: 19px;
+        text-transform: uppercase;
+        color: #0080cd;
+    }
+
+    .help-btn::before {
+        background-color: #0074cd;
+        position: absolute;
+        border-radius: 100%;
+        z-index: 2;
+        top: 50%;
+        left: 5px;
+        display: block;
+        width: 45px;
+        height: 45px;
+        content: '';
+        background-repeat: no-repeat;
+        background-size: cover;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        background-position: 8px 50%;
+        background-image: url(/wp-content/themes/haultail/images/footer-logo-image.png);
+    }
+
+    #help-block .btn-submit-wrapper {
+        position: relative;
+        border-radius: 18px;
+        text-align: right;
+    }
+
+    #help-block .btn-submit-wrapper::before {
+        width: 126px;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: -3px;
+        content: '';
+        border-radius: inherit;
+        background: -webkit-gradient(linear, left top, left bottom, from(#fae50e), color-stop(#facf21), to(#f8bb2c));
+        background: linear-gradient(to bottom, #fae50e, #facf21, #f8bb2c);
+    }
+
+    #help-block .btn-submit {
+        position: relative;
+        z-index: 2;
+        width: 120px;
+        cursor: pointer;
+        text-align: center;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 18px;
+        outline: none;
+        background: -webkit-gradient(linear, left bottom, left top, from(#fae50e), color-stop(#facf21), to(#f8bb2c));
+        background: linear-gradient(to top, #fae50e, #facf21, #f8bb2c);
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 30px;
+    }
+
+    #help-block .modal-content {
+        background-color: #fff5b2;
+        -webkit-box-shadow: inset 3px 3px 5px 0px rgba(184, 99, 0, 0.2), 3px 3px 3px rgba(4, 64, 101, 0.1);
+        box-shadow: inset 3px 3px 5px 0px rgba(184, 99, 0, 0.2), 3px 3px 3px rgba(4, 64, 101, 0.1);
+    }
+
+    #help-block .modal-body {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    #help-block .form-group {
+        margin-bottom: 20px;
+    }
+
+    #help-block .form-control {
+        height: 40px;
+        margin-bottom: 10px;
+        border-color: #a9a9a9;
+        border-top-color: #000;
+        border-left-color: #000;
+    }
+
+    #help-block .form-control-textarea {
+        height: 90px;
+        margin-bottom: 0;
+        border: 1px solid #767676;
+        border-radius: 0;
+    }
+
+    .slide-bottom {
+        -webkit-animation: slide-bottom 0.15s linear;
+        animation: slide-bottom 0.15s linear;
+    }
+
+    @-webkit-keyframes slide-bottom {
+        0% {
+            margin-top:-40px;
+        }
+        100% {
+            margin-top:0px;
+        }
+    }
+
+    @keyframes slide-bottom {
+        0% {
+            margin-top:-40px;
+        }
+        100% {
+            margin-top:0px;
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        #help-block .form-control {
+            margin-bottom: 20px;
+        }
+        #help-block h3 {
+            font-size: 24px;
+            margin-bottom: 0;
+        }
+        #help-block h4 {
+            font-size: 22px;
+            margin-top: 0;
+        }
+    }
+
+</style>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous">
+    </script>
+<script>
+    $(document).ready(function () {
+        $('.help-btn').click( function(){
+            $('#help-block').css('visibility','visible').css('opacity','1');
+            $('#help-block .modal-dialog').addClass('slide-bottom');
+        });
+        $('#help-block .close').click( function(){
+            $('#help-block').css('visibility','hidden').css('opacity','0');
+            $('#help-block .modal-dialog').removeClass('slide-bottom');
+        });
+
+    });
+</script>
+</body>
+</html>
